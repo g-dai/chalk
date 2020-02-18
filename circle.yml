@@ -1,11 +1,8 @@
 machine:
-  environment:
-    USER_NAME: g-dai
-    USER_EMAIL: gracedai98@gmail.com
   ruby:
-    version: 2.4.1
+    version: 2.5.1
   node:
-    version: 8.2.1
+    version: 8.0.0
 
 dependencies:
   pre:
@@ -14,10 +11,5 @@ dependencies:
 test:
   post:
     - bundle exec jekyll build
-    - bundle exec htmlproofer ./_site --only-4xx --allow-hash-href
-
-deployment:
-  production:
-    branch: master
-    commands:
-      - ./bin/automated
+    - rm -R ./_site/node_modules
+    - bundle exec htmlproofer ./_site --only-4xx --allow-hash-href --assume-extension --check-opengraph --url-ignore "feed.xml"
