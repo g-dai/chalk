@@ -16,7 +16,7 @@
           <div class="article-content">
             {{ content }}
           </div>
-        <div class="article-share">
+       <!-- <div class="article-share">
             {% assign page_title = page.title | cgi_escape | truncate: 110 %}
             {% capture twitter-share-text %}{{ page_title }} - {{ page.url | absolute_url }}{% if site.social.twitter %} by @{{ site.social.twitter }}{% endif %}{% endcapture %}
             <a href="https://twitter.com/home?status={{ twitter-share-text | uri_escape }}" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
@@ -32,7 +32,7 @@
             <script src="https://{{ site.discus_identifier }}.disqus.com/embed.js" async defer></script>
             <noscript>Please enable JavaScript to view the comments.</noscript>
           {% endif %}
-          
+          --> 
         </article>
         {% include footer.html %}
       </div>
